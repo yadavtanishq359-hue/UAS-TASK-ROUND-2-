@@ -167,7 +167,7 @@ for c in casualties:
 
 # PRINTING RESULT
 print("\nTotal Casualties:", len(casualties))
-print("\nRank (Severity = Shape score x Color score, Level bas alag se dikh raha hai):")
+print("\nRank (Severity = Shape score x Color score):")
 
 rank = 1
 for c in casualties:
