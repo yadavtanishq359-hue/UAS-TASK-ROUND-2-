@@ -2,7 +2,7 @@ import cv2 as cv
 import numpy as np
 
 # OPENING OF IMAGE
-image = cv.imread(r"C:/Python/UAS PROJECT/input/IMAGE1.jpg")
+image = cv.imread(r"C:/Python/UAS PROJECT/input/IMAGE5.jpg")
 
 # BLUE GREEN RED INTO HUE SATURATION VALUE
 hsv = cv.cvtColor(image, cv.COLOR_BGR2HSV)
