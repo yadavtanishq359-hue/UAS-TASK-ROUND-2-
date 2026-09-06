@@ -171,13 +171,14 @@ print("\nTotal Casualties:", len(casualties))
 print("\nRank (Severity = Shape score x Color score):")
 
 rank = 1
+
 for c in casualties:
     cx, cy, shape, color, level, severity, box = c
     print(f"Rank {rank}: Coordinates=({cx},{cy})  Shape={shape}  Color={color}  "
           f"Severity={severity}  Level={level}")
     rank += 1
 
-output_folder = r"C:/Python/UAS PROJECT/Output"
+output_folder = r"C:/Python/UAS PROJECT/Output main"
 
 output_path = os.path.join(output_folder, "IMAGE1.jpg")
 
