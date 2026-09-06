@@ -1,8 +1,9 @@
 import cv2 as cv
 import numpy as np
+import os
 
 # OPENING OF IMAGE
-image = cv.imread(r"C:/Python/UAS PROJECT/input/IMAGE5.jpg")
+image = cv.imread(r"C:/Python/UAS PROJECT/input/IMAGE1.jpg")
 
 # BLUE GREEN RED INTO HUE SATURATION VALUE
 hsv = cv.cvtColor(image, cv.COLOR_BGR2HSV)
@@ -19,7 +20,18 @@ blue_mask = cv.inRange(image, lower_blue, upper_blue)
 
 mask = cv.bitwise_not(cv.bitwise_or(black_mask, blue_mask))
 
+output_folder = r"C:/Python/UAS PROJECT/Output"
+
+output_path = os.path.join(output_folder, "IMAGE1.jpg")
+
+success = cv.imwrite(output_path, mask)
+
+if success:
+    print("\nOutput image saved successfully!")
+    print("Saved at:", output_path)
+
 cv.imshow("Result", mask)
 cv.waitKey(0)
 cv.destroyAllWindows()
+
  

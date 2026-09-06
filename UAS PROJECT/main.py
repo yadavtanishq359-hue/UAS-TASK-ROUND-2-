@@ -1,8 +1,9 @@
 import cv2 as cv
 import numpy as np
+import os
 
 # LOADING OF IMAGE AND BGR TO HSV
-image = cv.imread(r"C:/Python/UAS PROJECT/input/IMAGE5.jpg")
+image = cv.imread(r"C:/Python/UAS PROJECT/input/IMAGE1.jpg")
 hsv = cv.cvtColor(image, cv.COLOR_BGR2HSV)
 output = image.copy()
 
@@ -175,6 +176,16 @@ for c in casualties:
     print(f"Rank {rank}: Coordinates=({cx},{cy})  Shape={shape}  Color={color}  "
           f"Severity={severity}  Level={level}")
     rank += 1
+
+output_folder = r"C:/Python/UAS PROJECT/Output"
+
+output_path = os.path.join(output_folder, "IMAGE1.jpg")
+
+success = cv.imwrite(output_path, output)
+
+if success:
+    print("\nOutput image saved successfully!")
+    print("Saved at:", output_path)
 
 cv.imshow("Casualties", output)
 cv.waitKey(0)
